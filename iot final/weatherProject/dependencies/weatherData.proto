@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+enum WindDir {
+	UNSPECIFIED = 0;
+	N = 1;
+	NE = 2;
+	E = 3;
+	SE = 4;
+	S = 5; 
+	SW = 6;
+	W = 7; 
+	NW = 8;
+}
+
+message WeatherData {
+	oneof _temperature { int32 temperature = 1; }
+	oneof _UVindex { uint32 UVindex = 2; }
+	oneof _humidity { uint32 humidity = 3; }
+	oneof _cloudCover { uint32 cloudCover = 4; }
+	oneof _windSpeed { uint32 windSpeed = 5; }
+	WindDir windDirection = 6;
+}
